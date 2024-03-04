@@ -2,10 +2,25 @@ var addItemBtn = document.getElementById("addItem");
 var input = document.getElementById("addItemInput");
 var ul = document.querySelector("ul");
 
-addItemBtn.addEventListener("click", function () {
-  if (input.value === "") return;
-  // Create a new li element and set its
+const inputLength = () => {
+  return input.value.length;
+};
+
+const createListElement = () => {
   var li = document.createElement("li");
-  li.appendChild(document.createTextNode("testing"));
+  li.appendChild(document.createTextNode(input.value));
   ul.appendChild(li);
+  input.value = "";
+};
+
+addItemBtn.addEventListener("click", function () {
+  if (inputLength() > 0) {
+    createListElement();
+  }
+});
+
+input.addEventListener("keypress", function (event) {
+  if (inputLength > 0 && event.key === 13) {
+    createListElement();
+  }
 });
