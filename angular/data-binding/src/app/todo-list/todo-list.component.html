@@ -8,17 +8,17 @@
   <button (click)="addTodo()">Add</button>
 </div> -->
 
-<div class="todo-app">
-  <form class="input-section">
-    <input id="todoInput" type="text" placeholder="Add item..." />
-    <button id="addBtn" type="submit" class="add">Add</button>
-    <button type="button" class="add" id="update-button" style="display: none">
-      Update
-    </button>
-    <input type="text" id="search-input" placeholder="Search" />
-    <button type="button" id="search-button">Search</button>
-  </form>
-  <div class="todos">
-    <ul class="todo-list"></ul>
-  </div>
+<div class="todo-container">
+  <h2>Todo List</h2>
+  <input [(ngModel)]="newTodoTitle" placeholder="Enter Todo... " />
+  <input [(ngModel)]="newTodoDate" type="date" placeholder="Enter Date " />
+  <button (click)="addTodo()">Add</button>
+  <br />
+  <ul>
+    <li *ngFor="let todoList of todo">
+      <span class="title">{{ todoList.id }} - </span>
+      <span class="title">{{ todoList.title }} - </span>
+      <span class="date">{{ todoList.date | date : "dd/MM/yyyy" }} - </span>
+    </li>
+  </ul>
 </div>
