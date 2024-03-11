@@ -1,9 +1,24 @@
 <!-- One way data binding  {{}}-->
 <!-- <p>{{ todo.id }}</p> -->
 
-<div class="input-container">
-  <!-- two way data binding -->
-  <input [(ngModel)]="newTodoTitle" placeholder="Enter Todo... " />
+<!-- <div class="input-container"> -->
+<!-- two way data binding -->
+<!-- <input [(ngModel)]="newTodoTitle" placeholder="Enter Todo... " />
   <input [(ngModel)]="newTodoDate" type="date" placeholder="Enter Date " />
   <button (click)="addTodo()">Add</button>
+</div> -->
+
+<div class="todo-app">
+  <form class="input-section">
+    <input id="todoInput" type="text" placeholder="Add item..." />
+    <button id="addBtn" type="submit" class="add">Add</button>
+    <button type="button" class="add" id="update-button" style="display: none">
+      Update
+    </button>
+    <input type="text" id="search-input" placeholder="Search" />
+    <button type="button" id="search-button">Search</button>
+  </form>
+  <div class="todos">
+    <ul class="todo-list"></ul>
+  </div>
 </div>

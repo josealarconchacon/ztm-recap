@@ -16,7 +16,6 @@ export class TodoListComponent {
   addTodo() {
     // validate fields
     if (this.newTodoTitle.trim().length && this.newTodoDate) {
-      this.newTodoTitle = '';
       let newTodo: Todo = {
         id: Date.now(),
         title: this.newTodoTitle,
