@@ -14,16 +14,36 @@ export class TodoListComponent {
   todo: Todo[] = [];
 
   addTodo() {
-    // validate fields
-    if (this.newTodoTitle.trim().length && this.newTodoDate) {
-      let newTodo: Todo = {
+    // Validate fields
+    const isTitleValid = this.newTodoTitle.trim().length > 0;
+    const isDateValid = !!this.newTodoDate;
+
+    if (isTitleValid && isDateValid) {
+      const newTodo: Todo = {
         id: Date.now(),
         title: this.newTodoTitle,
         date: this.newTodoDate,
       };
+
       this.todo.push(newTodo);
-      this.newTodoTitle = '';
-      this.newTodoDate = new Date();
+      this.resetTodoInput();
+
+      // Local storage
+      this.updateLocalStorage();
     }
+  }
+
+  deleteTodo(index: number) {
+    this.todo.splice(index, 1);
+    this.updateLocalStorage();
+  }
+
+  updateLocalStorage() {
+    localStorage.setItem('todo', JSON.stringify(this.todo));
+  }
+
+  resetTodoInput() {
+    this.newTodoTitle = '';
+    this.newTodoDate = new Date();
   }
 }

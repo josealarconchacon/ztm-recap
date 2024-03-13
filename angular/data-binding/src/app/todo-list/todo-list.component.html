@@ -1,13 +1,3 @@
-<!-- One way data binding  {{}}-->
-<!-- <p>{{ todo.id }}</p> -->
-
-<!-- <div class="input-container"> -->
-<!-- two way data binding -->
-<!-- <input [(ngModel)]="newTodoTitle" placeholder="Enter Todo... " />
-  <input [(ngModel)]="newTodoDate" type="date" placeholder="Enter Date " />
-  <button (click)="addTodo()">Add</button>
-</div> -->
-
 <div class="todo-container">
   <h2>Todo List</h2>
   <input [(ngModel)]="newTodoTitle" placeholder="Enter Todo... " />
@@ -15,10 +5,10 @@
   <button (click)="addTodo()">Add</button>
   <br />
   <ul>
-    <li *ngFor="let todoList of todo">
-      <span class="title">{{ todoList.id }} - </span>
+    <li *ngFor="let todoList of todo; index as i">
       <span class="title">{{ todoList.title }} - </span>
       <span class="date">{{ todoList.date | date : "dd/MM/yyyy" }} - </span>
+      <button (click)="deleteTodo(i)">Delete</button>
     </li>
   </ul>
 </div>
