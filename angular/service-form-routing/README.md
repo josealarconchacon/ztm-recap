@@ -1,5 +1,29 @@
 # ServiceFormRouting
 
+- [ ] Services
+- [ ] Form & Form Validation
+- [ ] Routing
+
+# Project Structure
+
+- **Create Reservation**
+  - `create_reservation.go` - Contains the logic for creating a new reservation.
+  - `create_reservation_test.go` - Unit tests for the create reservation functionality.
+
+- **List Reservation**
+  - `list_reservation.go` - Contains the logic for listing reservations.
+  - `list_reservation_test.go` - Unit tests for the list reservation functionality.
+
+- **Edit Reservation**
+  - `edit_reservation.go` - Contains the logic for editing an existing reservation.
+  - `edit_reservation_test.go` - Unit tests for the edit reservation functionality.
+
+- **Delete Reservation**
+  - `delete_reservation.go` - Contains the logic for deleting a reservation.
+  - `delete_reservation_test.go` - Unit tests for the delete reservation functionality.
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
 ## Development server
