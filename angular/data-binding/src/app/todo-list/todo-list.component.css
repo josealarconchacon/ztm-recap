@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: "Arial", sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -9,9 +9,7 @@ body {
 .todo-container {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
-  /* height: 150vh; Adjust the height as needed */
   width: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -25,7 +23,7 @@ span {
 }
 
 .todo-container {
-  width: 50%; /* or any specific width */
+  width: 50%; 
   margin: 0 auto;
 }
 
@@ -51,4 +49,4 @@ button {
 
 button:hover {
   background-color: #45a049;
-}
+} */

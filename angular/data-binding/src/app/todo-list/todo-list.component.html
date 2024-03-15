@@ -1,14 +1,46 @@
 <div class="todo-container">
-  <h2>Todo List</h2>
-  <input [(ngModel)]="newTodoTitle" placeholder="Enter Todo... " />
-  <input [(ngModel)]="newTodoDate" type="date" placeholder="Enter Date " />
-  <button (click)="addTodo()">Add</button>
+  <div class="card mt-3">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center">Create A New Todo</h2>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div>
+        <input
+          class="col-md-6"
+          class="form-control"
+          [(ngModel)]="newTodoTitle"
+          placeholder="Enter Todo... "
+        />
+      </div>
+      <div>
+        <input
+          class="col-md-4"
+          class="form-control"
+          [(ngModel)]="newTodoDate"
+          type="date"
+          placeholder="Enter Date "
+        />
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-primary w-100" (click)="addTodo()">Add</button>
+      </div>
+    </div>
+  </div>
   <br />
-  <ul>
-    <li *ngFor="let todoList of todo; index as i">
+  <h4 class="text-center md-5">Todo's</h4>
+  <ul class="list-group mt-3">
+    <li
+      class="list-group-item d-flex justify-content-between align-item-center"
+      *ngFor="let todoList of todo; index as i"
+    >
       <span class="title">{{ todoList.title }} - </span>
       <span class="date">{{ todoList.date | date : "dd/MM/yyyy" }} - </span>
-      <button (click)="deleteTodo(i)">Delete</button>
+      <button class="btn btn-danger w-10" (click)="deleteTodo(i)">
+        Delete
+      </button>
     </li>
   </ul>
 </div>

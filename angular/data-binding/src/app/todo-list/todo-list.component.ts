@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Todo } from '../models/todo';
 
 @Component({
@@ -6,12 +6,19 @@ import { Todo } from '../models/todo';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
   // properties
   newTodoTitle: string = '';
   newTodoDate: Date = new Date();
 
   todo: Todo[] = [];
+
+  // Life cycle hook
+  ngOnInit(): void {
+    let saveTodo = localStorage.getItem('todo');
+    //only load the todo if there is a save todo, otherwise, create an empty array
+    this.todo = saveTodo ? JSON.parse(saveTodo) : [];
+  }
 
   addTodo() {
     // Validate fields
