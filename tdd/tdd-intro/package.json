@@ -1,0 +1,15 @@
+{
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "test": "jest-watchAll --verbose"
+  },
+  "devDependencies": {
+    "vite": "5.2.6"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
