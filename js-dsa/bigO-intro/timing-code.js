@@ -11,4 +11,16 @@ function sumOfNumbers(n) {
   }
   return sum;
 }
-console.log(sumOfNumbers(6));
+// console.log(sumOfNumbers(6));
+
+// function sumOfNumbers01(n) {
+//   return (n * (n + 1)) / 2;
+// }
+
+// Measure execution time
+const startTime = performance.now();
+sumOfNumbers(100000000);
+const endTime = performance.now();
+
+// Calculate and log the elapsed time
+console.log(`Time elapsed: ${(endTime - startTime) / 1000} seconds`);
