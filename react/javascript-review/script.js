@@ -95,6 +95,16 @@ console.log(movie);
 const { title, director, genres } = movie;
 console.log(title, director);
 
-// Destructuring the genres array
-const [primaryGenres, secondaryGenres] = genres;
+// Destructuring the genres array & Rest/Spread Operator
+const [primaryGenres, secondaryGenres, ...otherGenres] = genres;
 console.log(primaryGenres, secondaryGenres);
+console.log(otherGenres);
+
+const newGenres = [...genres, "epic drama"];
+newGenres;
+
+const updatedMovie = {
+  ...movie,
+  releaseDate: "1989-09-22",
+};
+updatedMovie;
