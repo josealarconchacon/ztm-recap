@@ -1,3 +1,7 @@
+#Bagel Menu
+![image](https://github.com/user-attachments/assets/3f6ec8ec-f8ba-4b09-9252-ebfed04f75e4)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
