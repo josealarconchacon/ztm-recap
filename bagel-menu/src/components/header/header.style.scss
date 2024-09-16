@@ -1,7 +1,50 @@
 .header {
+  background-color: #fff5e1;
+  padding: 40px 20px;
   text-align: center;
-  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #f3d19c;
+
+  .header-content {
+    margin-bottom: 40px;
+  }
+
   h1 {
-    font-size: 2.5rem;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    color: #333;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    font-family: "Arial", sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 15px;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+    }
   }
 }

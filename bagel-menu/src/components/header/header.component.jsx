@@ -5,11 +5,14 @@ import "./header.style.scss";
 
 function Header() {
   return (
-    <div className="header">
-      <h1>NYC Bagel Shop</h1>
-      <Menu />
+    <header className="header">
+      <div className="header-content">
+        <h1>NYC Bagel Shop</h1>
+        <p className="tagline">The Best Bagels in Town!</p>
+        <Menu />
+      </div>
       <BagelList />
-    </div>
+    </header>
   );
 }
 

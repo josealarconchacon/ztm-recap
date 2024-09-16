@@ -5,7 +5,7 @@ import "./bagel-list.styles.scss";
 const initialBagels = [
   {
     id: 1,
-    name: "Classic Bagel",
+    name: "Classic",
     ingredient: "Plain bagel with sesame seeds",
     price: 2.5,
     photo:
@@ -14,8 +14,8 @@ const initialBagels = [
   },
   {
     id: 2,
-    name: "Everything Bagel",
-    ingredient: "Bagel with poppy seeds, sesame seeds, onion, garlic, and salt",
+    name: "Everything",
+    ingredient: "With poppy seeds, sesame seeds, onion, garlic, and salt",
     price: 3.0,
     photo:
       "https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/2/bagel-csa-images.jpg",
@@ -23,7 +23,7 @@ const initialBagels = [
   },
   {
     id: 3,
-    name: "Cinnamon Raisin Bagel",
+    name: "Cinnamon",
     ingredient: "Bagel with cinnamon and raisins",
     price: 2.75,
     photo:
@@ -31,8 +31,17 @@ const initialBagels = [
     soldout: true,
   },
   {
+    id: 6,
+    name: "Garlic",
+    ingredient: "Bagel with garlic seasoning",
+    price: 3.0,
+    photo:
+      "https://www.shutterstock.com/image-vector/drawing-bagel-hand-sketch-food-600w-2423339535.jpg",
+    soldout: true,
+  },
+  {
     id: 4,
-    name: "Blueberry Bagel",
+    name: "Blueberry",
     ingredient: "Bagel with blueberries",
     price: 3.25,
     photo:
@@ -41,21 +50,12 @@ const initialBagels = [
   },
   {
     id: 5,
-    name: "Whole Wheat Bagel",
+    name: "Whole Wheat",
     ingredient: "Bagel made with whole wheat flour",
     price: 2.85,
     photo:
       "https://www.shutterstock.com/image-vector/bagel-sandwich-smoked-salmon-600nw-2152592537.jpg",
     soldout: false,
-  },
-  {
-    id: 6,
-    name: "Garlic Bagel",
-    ingredient: "Bagel with garlic seasoning",
-    price: 3.0,
-    photo:
-      "https://www.shutterstock.com/image-vector/drawing-bagel-hand-sketch-food-600w-2423339535.jpg",
-    soldout: true,
   },
 ];
 

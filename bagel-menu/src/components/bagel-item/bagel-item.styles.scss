@@ -1,44 +1,95 @@
-.bagel-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  gap: 20px;
+.bagel-item {
+  background-color: #ffffff;
   padding: 20px;
-  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  img {
+    width: 150px;
+    height: auto;
+    border-radius: 1px;
+    background-color: #fff4e1;
+    padding: 1.5px;
+    object-fit: cover;
+  }
+
+  .bagel-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    p.price {
+      font-weight: bold;
+      color: #333;
+    }
+
+    p.soldout {
+      color: red;
+    }
+
+    p.available {
+      color: green;
+    }
+  }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+    text-align: center;
+
+    img {
+      width: 100%;
+      margin-bottom: 15px; /* Add space between image and text */
+    }
+
+    .bagel-details {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
-}
+    padding: 15px;
 
-.bagel-item {
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
 
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
+    .bagel-details {
+      h2 {
+        font-size: 1.1rem;
+      }
 
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-
-  p {
-    margin: 5px 0;
+      p {
+        font-size: 0.85rem;
+      }
+    }
   }
 }
