@@ -1,38 +1,40 @@
-import React from "react";
-import { useState } from "react";
-
+import React, { useState } from "react";
+import QuantitySelect from "./quantity-select";
+import DescriptionInput from "./description-input";
+import SubmitButton from "./submit-button";
 import "./form.style.scss";
 
 function Form() {
   const [description, setDescription] = useState("");
-  const [quantity, setQuantity] = useState();
+  const [quantity, setQuantity] = useState(1);
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("Form submitted", event);
+    // validate form
+    if (description.trim() === "" || quantity <= 0) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    const addNewItem = { description, quantity, packed: false, id: Date.now() };
+    console.log(addNewItem);
+    setDescription("");
+    setQuantity(1);
   }
 
   return (
-    <div className="form" onSubmit={handleSubmit}>
-      <form className="add-form">
+    <div className="form">
+      <form className="add-form" onSubmit={handleSubmit}>
         <h3>What do you need for your next meal?</h3>
-        <select
+        <QuantitySelect
           value={quantity}
-          onChange={(event) => setQuantity(event.target.value)}
-        >
-          {Array.from({ length: 20 }, (_, index) => index + 1).map((num) => (
-            <option key={num} value={num}>
-              {num}
-            </option>
-          ))}
-        </select>
-        <input
-          type="text"
-          placeholder="Enter your name..."
-          value={description}
-          onChange={(event) => setDescription(event.target.value)}
+          onChange={(e) => setQuantity(e.target.value)}
         />
-        <button>Add Item</button>
+        <DescriptionInput
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <SubmitButton />
       </form>
     </div>
   );
