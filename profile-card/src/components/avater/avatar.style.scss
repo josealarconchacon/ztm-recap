@@ -1,0 +1,13 @@
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.avatar img {
+  border-radius: 5%;
+  object-fit: fill;
+  border: 0.9px solid #ddd;
+  filter: drop-shadow(0 0 0.75rem rgb(255, 211, 220));
+}
