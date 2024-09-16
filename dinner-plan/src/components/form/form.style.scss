@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.add-form {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.add-form select,
+.add-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.add-form select {
+  flex: 2;
+}
+
+.add-form input {
+  flex: 3;
+}
+
+.add-form button {
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.add-form button:hover {
+  background: #0056b3;
+}
