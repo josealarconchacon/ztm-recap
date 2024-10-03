@@ -1,8 +1,9 @@
 $form-bg: #f0f4f8;
-$input-bg: #ffffff;
-$input-border: rgba(0, 0, 0, 0.2);
+$input-bg: linear-gradient(135deg, #084f65, #6c63ff);
+$input-border: rgba(190, 190, 190, 0.2);
 $input-focus-border: #6c63ff;
-$button-bg: #6c63ff;
+$input-text-color: #f0f4f8;
+$button-bg: #084f65;
 $button-hover-bg: #5a52d1;
 $button-active-bg: #4a42a0;
 $shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -23,6 +24,7 @@ $transition: all 0.3s ease;
 
 .add-form {
   background: $input-bg;
+  color: $input-text-color;
   border: 1px solid $input-border;
   border-radius: 12px;
   box-shadow: $shadow;
@@ -31,7 +33,7 @@ $transition: all 0.3s ease;
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   transition: $transition;
 
   @media (max-width: 768px) {
@@ -64,12 +66,13 @@ $transition: all 0.3s ease;
 
 .add-form select {
   flex: 2;
-  min-width: 150px;
+  min-width: 100px;
 }
 
 .add-form input {
-  flex: 3;
+  flex: 4;
   min-width: 200px;
+  margin: 1em;
 }
 
 .add-form button {

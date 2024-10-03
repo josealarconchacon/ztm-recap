@@ -10,11 +10,30 @@ function App() {
   function handleAddNewItems(item) {
     setItems((items) => [...items, item]);
   }
+
+  function handleOnDeleteItem(id) {
+    setItems((item) => item.filter((item) => item.id !== id));
+  }
+
+  function onHandleToggleItem(id) {
+    setItems((item) =>
+      item.map((item) => {
+        if (item.id === id) {
+          return { ...item, packed: !item.packed };
+        }
+        return item;
+      })
+    );
+  }
   return (
     <div className="App">
       <Logo />
       <Form onAddItems={handleAddNewItems} />
-      <PackingList items={items} />
+      <PackingList
+        items={items}
+        onDeleteItem={handleOnDeleteItem}
+        onToggleItems={onHandleToggleItem}
+      />
       <Stats />
     </div>
   );
