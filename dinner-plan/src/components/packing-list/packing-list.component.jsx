@@ -17,7 +17,7 @@ const items = [
   },
 ];
 
-function ItemList() {
+function ItemList({ items }) {
   return (
     <ul className="item-container">
       {items.map((item) => (

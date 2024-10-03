@@ -1,10 +1,29 @@
 .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #084f65, #6c63ff); // Gradient background
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); // Abstract shape
   text-align: center;
-  margin-bottom: 30px;
+  border-radius: 15px;
+  padding: 20px;
 
   h1 {
-    font-size: 2.5rem;
-    color: #e4e4e4;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 3rem; // Increased font size
+    color: #ffffff; // White text color for better contrast
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Stronger text shadow
+    animation: fadeIn 1s ease-in-out; // Fade-in animation
+    transform: translateY(-20px); // Slightly raised position
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px); // Initial position
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0); // Final position
+      }
+    }
   }
 }

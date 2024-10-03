@@ -1,51 +1,104 @@
+$form-bg: #f0f4f8;
+$input-bg: #ffffff;
+$input-border: rgba(0, 0, 0, 0.2);
+$input-focus-border: #6c63ff;
+$button-bg: #6c63ff;
+$button-hover-bg: #5a52d1;
+$button-active-bg: #4a42a0;
+$shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+$transition: all 0.3s ease;
+
 .form {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 16px;
+  border-radius: 12px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 12px;
+  }
 }
 
 .add-form {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 16px;
+  background: $input-bg;
+  border: 1px solid $input-border;
+  border-radius: 12px;
+  box-shadow: $shadow;
+  padding: 24px;
   max-width: 1000px;
   width: 100%;
   display: flex;
   align-items: center;
   gap: 16px;
+  transition: $transition;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+    border-radius: 8px;
+  }
 }
 
 .add-form select,
 .add-form input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 14px 16px;
+  border: 2px solid $input-border;
+  border-radius: 8px;
   font-size: 16px;
+  width: 100%;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    border-color: $input-focus-border;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.25);
+  }
 }
 
 .add-form select {
   flex: 2;
+  min-width: 150px;
 }
 
 .add-form input {
   flex: 3;
+  min-width: 200px;
 }
 
 .add-form button {
-  background: #007bff;
+  background: $button-bg;
   border: none;
   color: white;
-  border-radius: 4px;
-  padding: 12px;
+  border-radius: 8px;
+  padding: 12px 16px;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.3s ease;
-  flex-shrink: 0; /* Prevent button from shrinking */
-}
+  transition: background $transition, transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
 
-.add-form button:hover {
-  background: #0056b3;
+  &:hover {
+    background: $button-hover-bg;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    background: $button-active-bg;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 }

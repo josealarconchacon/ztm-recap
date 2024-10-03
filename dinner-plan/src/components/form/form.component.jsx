@@ -4,7 +4,7 @@ import DescriptionInput from "./description-input";
 import SubmitButton from "./submit-button";
 import "./form.style.scss";
 
-function Form() {
+function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -18,6 +18,7 @@ function Form() {
 
     const addNewItem = { description, quantity, packed: false, id: Date.now() };
     console.log(addNewItem);
+    onAddItems(addNewItem);
     setDescription("");
     setQuantity(1);
   }
