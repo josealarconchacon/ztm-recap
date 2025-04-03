@@ -12,7 +12,7 @@ A modern, responsive React application that displays a collection of monster car
 
 ## Demo
 
-https://github.com/yourusername/monsters-rolodex-react/assets/youruserid/demo-video.mp4
+[![Monsters Rolodex Demo](https://www.awesomescreenshot.com/video/38330063?key=0782b28d77c5d073147c9d994962b63a)](https://www.awesomescreenshot.com/video/38330063?key=0782b28d77c5d073147c9d994962b63a)
 
 ## Technologies Used
 
